@@ -1,4 +1,4 @@
-package sort;
+package sort.radix;
 
 import com.ibm.icu.text.CollationKey;
 import com.ibm.icu.text.Collator;
@@ -6,8 +6,9 @@ import com.ibm.icu.text.RuleBasedCollator;
 
 import java.util.Arrays;
 import java.util.Locale;
+import java.util.Objects;
 
-public class RadixItem {
+public class RadixItem implements Comparable {
     String source;
     CollationKey collationKey;
     byte[] collationKeyBytes;
@@ -57,10 +58,31 @@ public class RadixItem {
         } else return collationKeyBytes[d];
     }
 
+    public byte getEndByte(int d) {
+        if (collationKeyBytes.length <= d) {
+            return 0;
+        } else return collationKeyBytes[collationKeyBytes.length - 1 - d];
+    }
+
     @Override
     public String toString() {
-        return Arrays.toString(collationKeyBytes);
+        return Arrays.toString(Arrays.copyOfRange(collationKeyBytes, collationKeyBytes.length - 6, collationKeyBytes.length));
     }
 
 
+    @Override
+    public int compareTo(Object o) {
+        RadixItem radixItem = (RadixItem) o;
+        if (radixItem == null)
+            throw new NullPointerException("Comparable was Null");
+        return collationKey.compareTo(radixItem.collationKey);
+    }
+
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(source, collationKey);
+        result = 31 * result + Arrays.hashCode(collationKeyBytes);
+        return result;
+    }
 }

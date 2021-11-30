@@ -1,4 +1,4 @@
-package sort;
+package sort.radix;
 /******************************************************************************
  *  Compilation: javac MSDRadixSort.java
  *  Execution:   java MSDRadixSort < input.txt
@@ -83,28 +83,18 @@ public class MSDRadixSort {
         // compute frequency counts (need R = 256)
         int[] count = new int[R + 1];
         for (int i = lo; i <= hi; i++) {
-
-            try {
                 int c = a[i].getByte(d) & 0xFF;
                 count[c + 1]++;
-            } catch (Exception e) {
-                return;
-            }
         }
-
-
         // transform counts to indicies
         for (int r = 0; r < R; r++)
             count[r + 1] += count[r];
-
 
         // distribute
         for (int i = lo; i <= hi; i++) {
             int c = a[i].getByte(d) & 0xFF;
             aux[count[c]++] = a[i];
         }
-
-
         // copy back
         for (int i = lo; i <= hi; i++)
             a[i] = aux[i - lo];
