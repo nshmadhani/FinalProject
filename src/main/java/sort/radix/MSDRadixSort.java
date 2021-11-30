@@ -39,6 +39,7 @@ package sort.radix;
  * @author Robert Sedgewick
  * @author Kevin Wayne
  * @author Nishay
+ * @author aravind
  */
 public class MSDRadixSort {
     private static final int BITS_PER_BYTE = 8;
@@ -57,6 +58,8 @@ public class MSDRadixSort {
      */
 
     // exchange a[i] and a[j]
+    //recommendation: To avoid inspecting many empty buckets is to record the minimum and maximum character encountered
+    // during the bucketing phase and then only look at the buckets in between these extreme values.
 
 
     /**
