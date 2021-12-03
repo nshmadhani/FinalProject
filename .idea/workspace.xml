@@ -1,87 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="034ccf3f-da15-4b00-a4c9-8b2b290339ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inputs/Hindi-Words.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inputs/german-20K.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inputs/japanese-15K.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inputs/russian-20K.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outputs/Sorted-Hindi-Words.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outputs/Sorted-german-20K.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outputs/Sorted-japanese-20K.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outputs/Sorted-russian-20K.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outputs/chineese.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/io/InputReader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/io/OutputWriter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sort/MSDRadixSort.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sort/RadixItem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/sort/MSDRadixSortTest.class" afterDir="false" />
+    <list default="true" id="034ccf3f-da15-4b00-a4c9-8b2b290339ab" name="Default Changelist" comment="cases for hindi,german,japanese,russian added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sort/radix/MSDRadixSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sort/radix/MSDRadixSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sort/radix/LSDRadixSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sort/radix/LSDRadixSortTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FinalProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sort/radix/MSDRadixSortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sort/radix/MSDRadixSortTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sort/MSDRadixSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sort/RadixItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/sort/MSDRadixSortTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-792117707">
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="1" />
-          <entry key="xml" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="1" />
-          <entry key="XML" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/sort/radix/LSDRadixSortTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="54" column="37" lean-forward="true" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7486" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/sort/radix/MSDRadixSortTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="107" column="64" lean-forward="true" selection-start-line="107" selection-start-column="64" selection-end-line="107" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -220,17 +154,85 @@
   <component name="PropertiesComponent">
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1638287157366" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="RunManager" selected="JUnit.MSDRadixSortTest.sortFrenchTest">
+    <configuration name="MSDRadixSortTest.sortChineeseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FinalProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sort.radix.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sort.radix" />
+      <option name="MAIN_CLASS_NAME" value="sort.radix.MSDRadixSortTest" />
+      <option name="METHOD_NAME" value="sortChineeseTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MSDRadixSortTest.sortFrenchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FinalProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sort.radix.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sort.radix" />
+      <option name="MAIN_CLASS_NAME" value="sort.radix.MSDRadixSortTest" />
+      <option name="METHOD_NAME" value="sortFrenchTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MSDRadixSortTest.sortKoreanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FinalProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sort.radix.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sort.radix" />
+      <option name="MAIN_CLASS_NAME" value="sort.radix.MSDRadixSortTest" />
+      <option name="METHOD_NAME" value="sortKoreanTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MSDRadixSortTest.sortSankskritTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FinalProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sort.radix.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sort.radix" />
+      <option name="MAIN_CLASS_NAME" value="sort.radix.MSDRadixSortTest" />
+      <option name="METHOD_NAME" value="sortSankskritTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.MSDRadixSortTest.sortChineeseTest" />
+      <item itemvalue="JUnit.MSDRadixSortTest.sortFrenchTest" />
+      <item itemvalue="JUnit.MSDRadixSortTest.sortSankskritTest" />
+      <item itemvalue="JUnit.MSDRadixSortTest.sortKoreanTest" />
+    </list>
+    <recent_temporary>
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <item itemvalue="JUnit.MSDRadixSortTest.sortFrenchTest" />
+        <item itemvalue="JUnit.MSDRadixSortTest.sortKoreanTest" />
+        <item itemvalue="JUnit.MSDRadixSortTest.sortSankskritTest" />
+        <item itemvalue="JUnit.MSDRadixSortTest.sortChineeseTest" />
       </list>
-    </option>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -314,8 +316,8 @@
       <window_info anchor="right" id="Maven Projects" order="7" />
     </layout-to-restore>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Different Sorts" />
