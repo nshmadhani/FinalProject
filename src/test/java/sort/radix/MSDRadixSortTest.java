@@ -39,6 +39,7 @@ public class MSDRadixSortTest {
      *
      * */
 
+
     @org.junit.Test
     public void sortEnglishTest() {
         RadixItem[] sourceFile = RadixItem.createItem(InputReader.loadFile("english-20k.txt"),
@@ -47,6 +48,7 @@ public class MSDRadixSortTest {
         System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
         MSDRadixSort.sort(output);
         Arrays.sort(sourceFile);
+        OutputWriter.writeFile(output, "Sorted-English-Words.txt");
         assertArrayEquals(sourceFile, output);
     }
 

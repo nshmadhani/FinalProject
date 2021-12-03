@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * Taken from INFO6205 Repo - modified to remove dependency on helper class
+ *
+ * @param <X>
+ */
 public class QuickSort_DualPivot<X extends Comparable<X>> extends QuickSort<X> {
 
     public static final String DESCRIPTION = "QuickSort dual pivot";

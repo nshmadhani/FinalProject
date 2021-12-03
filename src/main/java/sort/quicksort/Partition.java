@@ -1,5 +1,11 @@
 package sort.quicksort;
 
+
+/**
+ * Taken from INFO6205 Repo - not modified
+ *
+ * @param <X>
+ */
 public class Partition<X extends Comparable<X>> {
     public final X[] xs;
     public final int from;

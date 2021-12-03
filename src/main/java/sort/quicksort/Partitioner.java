@@ -2,6 +2,11 @@ package sort.quicksort;
 
 import java.util.List;
 
+/**
+ * Taken from INFO6205 Repo - not modified
+ *
+ * @param <X> Element to partition
+ */
 public interface Partitioner<X extends Comparable<X>> {
 
     /**

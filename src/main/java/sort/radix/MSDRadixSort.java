@@ -34,16 +34,15 @@ package sort.radix;
  * see <a href="https://algs4.cs.princeton.edu/51radix">Section 5.1</a> of
  * <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  * <p>
- * Algoorth has been modified to work on byte arrays
+ * Algorithm has been adapted to sort byte[]
  *
  * @author Robert Sedgewick
  * @author Kevin Wayne
  * @author Nishay
- * @author aravind
+ *
  */
 public class MSDRadixSort {
-    private static final int BITS_PER_BYTE = 8;
-    private static final int BITS_PER_INT = 32;   // each Java int is 32 bits
+
     private static final int R = 256;   // extended ASCII alphabet size
     private static final int CUTOFF = 15;   // cutoff to insertion sort
 
@@ -82,9 +81,9 @@ public class MSDRadixSort {
             insertion(a, lo, hi);
             return;
         }
-
         // compute frequency counts (need R = 256)
         int[] count = new int[R + 1];
+
         for (int i = lo; i <= hi; i++) {
                 int c = a[i].getByte(d) & 0xFF;
                 count[c + 1]++;
@@ -105,7 +104,8 @@ public class MSDRadixSort {
         // recursively sort for each character
         // (could skip r = R/2 for d = 0 and skip r = R for d > 0)
         for (int r = 0; r < R; r++)
-            sort(a, lo + count[r], lo + count[r + 1] - 1, d + 1, aux);
+            if (count[r + 1] > count[r])
+                sort(a, lo + count[r], lo + count[r + 1] - 1, d + 1, aux);
 
     }
 

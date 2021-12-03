@@ -10,8 +10,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class ChartHelper {
-
-
     public static void printChart(XYDataset dataset, String fileName, String title, String xLabel, String yLabel) throws IOException {
         JFreeChart xylineChart = ChartFactory.createXYLineChart(
                 title,
@@ -28,4 +26,6 @@ public class ChartHelper {
         File XYChart = new File(dir + "/" + fileName);
         ChartUtils.saveChartAsPNG(XYChart, xylineChart, width, height);
     }
+
+
 }

@@ -4,14 +4,17 @@ package sort.quicksort;
 import java.util.Arrays;
 import java.util.Collection;
 
+/**
+ * Taken from INFO6205 Repo - not modified
+ *
+ * @param <X>
+ */
 public abstract class QuickSort<X extends Comparable<X>> {
 
     public static final int cutoff = 16;
-    private final InsertionSort<X> insertionSort;
     protected Partitioner<X> partitioner;
 
     public QuickSort(int N) {
-        insertionSort = new InsertionSort<>(N);
     }
 
     /**
@@ -70,7 +73,7 @@ public abstract class QuickSort<X extends Comparable<X>> {
     protected boolean terminator(X[] xs, int from, int to, int depth) {
         @SuppressWarnings("UnnecessaryLocalVariable") int lo = from;
         if (to <= lo + cutoff) {
-            insertionSort.sort(xs, from, to);
+            InsertionSort.sort(xs, from, to);
             return true;
         }
         return false;

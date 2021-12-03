@@ -29,8 +29,6 @@ public class InputReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
         return input.toArray(new String[0]);
     }
 

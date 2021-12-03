@@ -8,7 +8,12 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.util.Objects;
 
-public class RadixItem implements Comparable {
+
+/**
+ * The reason we created a new class and did not use CollationKey is due to
+ * CollationKey.toByteArray() -> creates a new byte[] every time we call, would add overhead to algorithm
+ */
+public class RadixItem implements Comparable<RadixItem> {
     String source;
     CollationKey collationKey;
     byte[] collationKeyBytes;
@@ -52,10 +57,15 @@ public class RadixItem implements Comparable {
         this.collationKeyBytes = collationKeyBytes;
     }
 
-    public byte getByte(int d) {
-        if (collationKeyBytes.length <= d) {
-            return 0;
-        } else return collationKeyBytes[d];
+
+    /**
+     * @param d
+     * @return an integer value for the byte(Why? since we need to return a value that
+     * is outside of the byte range d is greater than length of key)
+     */
+    public int getByte(int d) {
+        if (d < collationKeyBytes.length) return collationKeyBytes[d];
+        else return 0; //Random value
     }
 
     public byte getEndByte(int d) {
@@ -66,17 +76,11 @@ public class RadixItem implements Comparable {
 
     @Override
     public String toString() {
-        return Arrays.toString(Arrays.copyOfRange(collationKeyBytes, collationKeyBytes.length - 6, collationKeyBytes.length));
+        return Arrays.toString(Arrays.copyOfRange(collationKeyBytes, Math.max(0, collationKeyBytes.length - 14), collationKeyBytes.length));
+        //return source;
     }
 
 
-    @Override
-    public int compareTo(Object o) {
-        RadixItem radixItem = (RadixItem) o;
-        if (radixItem == null)
-            throw new NullPointerException("Comparable was Null");
-        return collationKey.compareTo(radixItem.collationKey);
-    }
 
 
     @Override
@@ -84,5 +88,13 @@ public class RadixItem implements Comparable {
         int result = Objects.hash(source, collationKey);
         result = 31 * result + Arrays.hashCode(collationKeyBytes);
         return result;
+    }
+
+    @Override
+    public int compareTo(RadixItem radixItem) {
+        if (radixItem == null)
+            throw new NullPointerException("Comparable was Null");
+        return collationKey.compareTo(radixItem.collationKey);
+
     }
 }
