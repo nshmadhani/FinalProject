@@ -10,7 +10,7 @@ To solve languages present in the unicode specification using MDS radixsort we r
 
 Unicode Collation algorithm provides rules created for linguistic orders for different algorithms. These rules were specified in the Common Locale Data Repository and are available to developers using the [ICU Library](https://icu.unicode.org/).
 
-Our approach creates [CollationKey](https://unicode-org.github.io/icu-docs/apidoc/dev/icu4j/com/ibm/icu/text/CollationKey.html) for each input provided based on the locale of the language. Each CollationKey is represented in such a fashion that if key1 is greater than key2, than the byte[] of key1 will also be greater than byte[] of key2.
+Our approach creates [CollationKey](https://unicode-org.github.io/icu-docs/apidoc/dev/icu4j/com/ibm/icu/text/CollationKey.html) for each input provided based on the locale of the language. Each CollationKey is represented in such a fashion that if key1 is greater than key2, then the byte[] of key1 will also be greater than byte[] of key2.
 
 We simply modified the existing MSD implementations to work with byte[] and added an improvement to sort 2 bytes at a time rather than one.
 
