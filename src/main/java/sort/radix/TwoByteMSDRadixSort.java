@@ -26,6 +26,8 @@ package sort.radix;
  *
  ******************************************************************************/
 
+import static sort.radix.MSDRadixSort.CUTOFF;
+
 /**
  * The {@code MSDRadixSort} class provides static methods for sorting an
  * array of extended ASCII strings or integers using MSDRadixSort radix sort.
@@ -34,20 +36,19 @@ package sort.radix;
  * see <a href="https://algs4.cs.princeton.edu/51radix">Section 5.1</a> of
  * <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  * <p>
- * Algorithm has been adapted to sort byte[]
+ * Algorithm has been adapted to sort byte[] but taking in two byte rather than one
  *
  * @author Robert Sedgewick
  * @author Kevin Wayne
  * @author Nishay
  *
  */
-public class MSDRadixSort {
+public class TwoByteMSDRadixSort {
 
-    private static final int R = 256;   // extended ASCII alphabet size
-    public static final int CUTOFF = 128;   // cutoff to insertion sort
+    private static final int R = 65536;   // extended ASCII alphabet size
 
     // do not instantiate
-    private MSDRadixSort() {
+    private TwoByteMSDRadixSort() {
     }
 
     /**
@@ -85,7 +86,7 @@ public class MSDRadixSort {
         int[] count = new int[R + 1];
 
         for (int i = lo; i <= hi; i++) {
-                int c = a[i].getByte(d) & 0xFF;
+                int c = a[i].getTwoBytes(d);
                 count[c + 1]++;
         }
         // transform counts to indicies
@@ -94,7 +95,7 @@ public class MSDRadixSort {
 
         // distribute
         for (int i = lo; i <= hi; i++) {
-            int c = a[i].getByte(d) & 0xFF;
+            int c = a[i].getTwoBytes(d);
             aux[count[c]++] = a[i];
         }
         // copy back
@@ -105,7 +106,7 @@ public class MSDRadixSort {
         // (could skip r = R/2 for d = 0 and skip r = R for d > 0)
         for (int r = 0; r < R; r++)
             if (count[r + 1] > count[r])
-                sort(a, lo + count[r], lo + count[r + 1] - 1, d + 1, aux);
+                sort(a, lo + count[r], lo + count[r + 1] - 1, d + 2, aux);
 
     }
 

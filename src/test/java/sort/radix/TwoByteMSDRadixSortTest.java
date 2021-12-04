@@ -1,5 +1,6 @@
 package sort.radix;
 
+
 import io.InputReader;
 import io.OutputWriter;
 import org.junit.Test;
@@ -9,21 +10,26 @@ import java.util.Locale;
 
 import static org.junit.Assert.assertArrayEquals;
 
-public class LSDRadixSortTest {
+public class TwoByteMSDRadixSortTest {
+
+
+    @org.junit.After
+    public void tearDown() {
+    }
+
 
 
     @org.junit.Test
-    public void sortBasic() {
-        RadixItem[] sourceFile = RadixItem.createItem(InputReader.loadFile("basic.txt"),
+    public void sortIntegers() {
+        RadixItem[] sourceFile = RadixItem.createItem(InputReader.loadFile("integers.txt"),
                 Locale.ENGLISH);
         RadixItem[] output = new RadixItem[sourceFile.length];
         System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
-        LSDRadixSort.sort(output);
+        TwoByteMSDRadixSort.sort(output);
         Arrays.sort(sourceFile);
-        OutputWriter.writeFile(output, "basic.txt");
+        OutputWriter.writeFile(output, "integers.txt");
         assertArrayEquals(sourceFile, output);
     }
-
 
     @org.junit.Test
     public void sortEnglishTest() {
@@ -31,9 +37,9 @@ public class LSDRadixSortTest {
                 Locale.ENGLISH);
         RadixItem[] output = new RadixItem[sourceFile.length];
         System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
-        LSDRadixSort.sort(output);
+        TwoByteMSDRadixSort.sort(output);
         Arrays.sort(sourceFile);
-        OutputWriter.writeFile(output, "english-20k.txt");
+        OutputWriter.writeFile(output, "Sorted-English-Words.txt");
         assertArrayEquals(sourceFile, output);
     }
 
@@ -43,9 +49,8 @@ public class LSDRadixSortTest {
                 Locale.CHINESE);
         RadixItem[] output = new RadixItem[sourceFile.length];
         System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
-        LSDRadixSort.sort(output);
+        TwoByteMSDRadixSort.sort(output);
         Arrays.sort(sourceFile);
-        OutputWriter.writeFile(output, "chineese.txt");
         assertArrayEquals(sourceFile, output);
     }
 
@@ -55,7 +60,7 @@ public class LSDRadixSortTest {
                 new Locale("hi-IN"));
         RadixItem[] output = new RadixItem[sourceFile.length];
         System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
-        LSDRadixSort.sort(output);
+        TwoByteMSDRadixSort.sort(output);
         Arrays.sort(sourceFile);
         OutputWriter.writeFile(output, "Sorted-Hindi-Words.txt");
         assertArrayEquals(sourceFile, output);
@@ -67,7 +72,7 @@ public class LSDRadixSortTest {
                 new Locale("ru-RU"));
         RadixItem[] output = new RadixItem[sourceFile.length];
         System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
-        LSDRadixSort.sort(output);
+        TwoByteMSDRadixSort.sort(output);
         Arrays.sort(sourceFile);
         OutputWriter.writeFile(output, "Sorted-russian-20K.txt");
         assertArrayEquals(sourceFile, output);
@@ -79,7 +84,7 @@ public class LSDRadixSortTest {
                 Locale.JAPANESE);
         RadixItem[] output = new RadixItem[sourceFile.length];
         System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
-        MSDRadixSort.sort(output);
+        TwoByteMSDRadixSort.sort(output);
         Arrays.sort(sourceFile);
         OutputWriter.writeFile(output, "Sorted-japanese-20K.txt");
         assertArrayEquals(sourceFile, output);
@@ -91,10 +96,47 @@ public class LSDRadixSortTest {
                 Locale.GERMAN);
         RadixItem[] output = new RadixItem[sourceFile.length];
         System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
-        LSDRadixSort.sort(output);
+        TwoByteMSDRadixSort.sort(output);
         Arrays.sort(sourceFile);
         OutputWriter.writeFile(output, "Sorted-german-20K.txt");
         assertArrayEquals(sourceFile, output);
     }
 
+    @Test
+    public void sortFrenchTest() {
+        RadixItem[] sourceFile = RadixItem.createItem(InputReader.loadFile("french-15K.txt"),
+                Locale.FRENCH);
+        RadixItem[] output = new RadixItem[sourceFile.length];
+        System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
+        TwoByteMSDRadixSort.sort(output);
+        Arrays.sort(sourceFile);
+        OutputWriter.writeFile(output, "Sorted-french-15K.txt");
+
+
+        assertArrayEquals(sourceFile, output);
+    }
+
+    @Test
+    public void sortKoreanTest() {
+        RadixItem[] sourceFile = RadixItem.createItem(InputReader.loadFile("Korean-15K.txt"),
+                new Locale("ko_KR"));
+        RadixItem[] output = new RadixItem[sourceFile.length];
+        System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
+        TwoByteMSDRadixSort.sort(output);
+        Arrays.sort(sourceFile);
+        OutputWriter.writeFile(output, "Sorted-Korean-15K.txt");
+        assertArrayEquals(sourceFile, output);
+    }
+
+    @Test
+    public void sortSankskritTest() {
+        RadixItem[] sourceFile = RadixItem.createItem(InputReader.loadFile("Sanskrit-15K.txt"),
+                new Locale("sa_IN"));
+        RadixItem[] output = new RadixItem[sourceFile.length];
+        System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
+        TwoByteMSDRadixSort.sort(output);
+        Arrays.sort(sourceFile);
+        OutputWriter.writeFile(output, "Sorted-Sanskrit-15K.txt");
+        assertArrayEquals(sourceFile, output);
+    }
 }

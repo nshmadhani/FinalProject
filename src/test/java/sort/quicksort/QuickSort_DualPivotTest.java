@@ -11,8 +11,7 @@ public class QuickSort_DualPivotTest {
 
 
     @Test
-    public void sortTest1() {
-
+    public void sortEnglish() {
         String[] sourceFile = InputReader.loadFile("english-20k.txt");
         String[] output = new String[sourceFile.length];
         System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
@@ -20,7 +19,28 @@ public class QuickSort_DualPivotTest {
         qs.sort(output, false);
         Arrays.sort(sourceFile);
         assertArrayEquals(sourceFile, output);
-
     }
+    @Test
+    public void sortIntegers() {
+        String[] sourceFile = InputReader.loadFile("integers.txt");
+        String[] output = new String[sourceFile.length];
+        System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
+        QuickSort<String> qs = new QuickSort_DualPivot<String>("Quicksort Int", output.length);
+        qs.sort(output, false);
+        Arrays.sort(sourceFile);
+        assertArrayEquals(sourceFile, output);
+    }
+    @Test
+    public void sortChineese() {
+        String[] sourceFile = InputReader.loadFile("chineese.txt");
+        String[] output = new String[sourceFile.length];
+        System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
+        QuickSort<String> qs = new QuickSort_DualPivot<String>("Quicksort Chineese", output.length);
+        qs.sort(output, false);
+        Arrays.sort(sourceFile);
+        assertArrayEquals(sourceFile, output);
+    }
+
+
 
 }

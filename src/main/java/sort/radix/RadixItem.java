@@ -67,6 +67,11 @@ public class RadixItem implements Comparable<RadixItem> {
         if (d < collationKeyBytes.length) return collationKeyBytes[d];
         else return 0; //Random value
     }
+    public int getTwoBytes(int d) {
+        if (d < collationKeyBytes.length)
+            return (((getByte(d) & 0xFF)<<8) |  (getByte(d + 1) & 0xFF));
+        else return 0; //Random value
+    }
 
     public byte getEndByte(int d) {
         if (collationKeyBytes.length <= d) {
@@ -76,8 +81,8 @@ public class RadixItem implements Comparable<RadixItem> {
 
     @Override
     public String toString() {
-        return Arrays.toString(Arrays.copyOfRange(collationKeyBytes, Math.max(0, collationKeyBytes.length - 14), collationKeyBytes.length));
-        //return source;
+        //return Arrays.toString(Arrays.copyOfRange(collationKeyBytes, Math.max(0, collationKeyBytes.length - 14), collationKeyBytes.length));
+        return source;
     }
 
 
