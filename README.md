@@ -52,7 +52,7 @@ Using this approach we can sort any string represented in Unicode encoding schem
 	    ├── timsort             # Implmented by us to Arrays.sort, Test Cases    
 	                              provided
 	                              
-    ├── util                    # Contains benchmarking code adaptef from 
+    ├── util                    # Contains benchmarking code adopted from 
 							      repository
     └── Main.java               # Performs bencharking of all sorting methods
 
