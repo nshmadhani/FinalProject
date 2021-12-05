@@ -61,9 +61,14 @@ Using this approach we can sort any string represented in Unicode encoding schem
 
 ![Test Cases Passing](https://i.imgur.com/J65Hw6q.png)
 
-## Benchmarking
+## Paper
 
-TODO
+[View](https://github.com/nshmadhani/FinalProject/blob/main/Paper.pdf)
+
+
+
+
+
 
 ## Contributors
 
