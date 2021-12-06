@@ -45,8 +45,8 @@ public class TwoByteMSDRadixSortTest {
 
     @Test
     public void sortChineeseTest() {
-        RadixItem[] sourceFile = RadixItem.createItem(InputReader.loadFile("chineese.txt"),
-                Locale.CHINESE);
+        RadixItem[] sourceFile = RadixItem.createItem(InputReader.loadFile("chineese-1000.txt"),
+                Locale.CHINA);
         RadixItem[] output = new RadixItem[sourceFile.length];
         System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
         TwoByteMSDRadixSort.sort(output);

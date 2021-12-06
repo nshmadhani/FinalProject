@@ -55,11 +55,12 @@ public class MSDRadixSortTest {
     @Test
     public void sortChineeseTest() {
         RadixItem[] sourceFile = RadixItem.createItem(InputReader.loadFile("chineese.txt"),
-                Locale.CHINESE);
+                Locale.CHINA);
         RadixItem[] output = new RadixItem[sourceFile.length];
         System.arraycopy(sourceFile, 0, output, 0, sourceFile.length);
         MSDRadixSort.sort(output);
         Arrays.sort(sourceFile);
+        OutputWriter.writeFile(output, "chinese.txt");
         assertArrayEquals(sourceFile, output);
     }
 
